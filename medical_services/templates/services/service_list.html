@@ -3,5 +3,8 @@
   Список услуг
 {% endblock %}
 {% block content %}
-  dev
+  {% for service in object_list %}
+    Название: {{ service.name }} <br> Стоимость: {{ service.cost }} ₽ <br> Длительность: {{ service.duration_minutes }} минут
+    <hr>
+  {% endfor %}
 {% endblock %}
