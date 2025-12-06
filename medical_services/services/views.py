@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+def service_list(request):
+    return render(request, 'core/homepage.html')
+
+
+def service(request, service_id):
+    return render(request, 'core/homepage.html')
