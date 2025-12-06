@@ -13,6 +13,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link {% if view_name == 'services:services_list' %} active {% endif %}" href="{% url 'services:services_list' %}">
+              Список Услуг
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link {% if view_name == 'core:about' %} active {% endif %}" href="{% url 'core:about' %}">
               О нас
             </a>
