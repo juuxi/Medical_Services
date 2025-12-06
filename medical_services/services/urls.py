@@ -6,5 +6,5 @@ app_name = 'services'
 
 urlpatterns = [
     path('<int:service_id>/', views.service, name="service"),
-    path('', views.service_list, name="services_list"),
+    path('', views.ServicesListView.as_view(), name="services_list"),
 ]

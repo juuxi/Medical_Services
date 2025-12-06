@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 
-def service_list(request):
-    return render(request, 'services/services_list.html')
+from .models import Service
+
+
+class ServicesListView(ListView):
+    model = Service
+    ordering = 'id'
 
 
 def service(request, service_id):
