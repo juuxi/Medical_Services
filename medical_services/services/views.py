@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .models import Service
 
@@ -9,5 +9,8 @@ class ServicesListView(ListView):
     ordering = 'id'
 
 
-def service(request, service_id):
-    return render(request, 'core/homepage.html')
+class ServiceDetailView(DetailView):
+    model = Service
+    pk_url_kwarg = 'service_id'
+    template_name = 'services/service_detail.html'
+
