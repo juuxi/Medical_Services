@@ -4,7 +4,11 @@
 {% endblock %}
 {% block content %}
   {% for service in object_list %}
-    Название: {{ service.name }} <br> Стоимость: {{ service.cost }} ₽ <br> Длительность: {{ service.duration_minutes }} минут
-    <hr>
+    {% if service.is_provided %}
+      Название: {{ service.name }} <br> Стоимость: {{ service.cost }} ₽ <br> Длительность: {{ service.duration_minutes }} минут
+      {% if not forloop.last %}
+        <hr>
+      {% endif %}
+    {% endif %}
   {% endfor %}
 {% endblock %}
