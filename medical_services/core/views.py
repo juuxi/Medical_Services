@@ -11,7 +11,7 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['services'] = Service.objects.filter(Q(is_provided=True))[:4]
-        context['news_list'] = News.objects.filter(Q(is_published=True))[:4]
+        context['news_list'] = News.objects.filter(Q(is_published=True)).order_by('-created_at')[:4]
         return context
     
 
