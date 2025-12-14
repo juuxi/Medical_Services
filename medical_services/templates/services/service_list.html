@@ -3,6 +3,7 @@
   Список услуг
 {% endblock %}
 {% block content %}
+  <h1>Наши услуги</h1>
   {% for service in object_list %}
     <div class="card col-4 text-white bg-primary mb-3 mt-3">
       {% if service.image %}
@@ -12,6 +13,7 @@
       {% endif %}
       <div class="card-body">
         <h3>{{ service.name }}</h3>
+        <h3>{{ service.short_description }}</h3>
         <p>{{ service.cost }} ₽</p>
         <a class="link-body-emphasis" href="{% url 'services:service_detail' service.id %}">Подробнее...</a>
       </div>
