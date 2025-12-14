@@ -17,3 +17,7 @@ class IndexView(TemplateView):
 
 class AboutView(TemplateView):
     template_name = 'core/about.html'
+
+
+def dummy(request):
+    return render(request, 'core/dummy.html')
