@@ -4,6 +4,11 @@
 {% endblock %}
 {% block content %}
   {% if news.is_published %}
+    {% if news.image %}
+      <a href="{{ news.image.url }}" target="_blank">
+        <img class="border-3 rounded img-fluid img-thumbnail mb-2 mx-auto d-block" src="{{ news.image.url }}">
+      </a>
+    {% endif %}
     <h2>{{ news.title }}</h2>
     <p>{{ news.text }}</p>
   {% else %}

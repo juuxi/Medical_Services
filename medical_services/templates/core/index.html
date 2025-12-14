@@ -11,6 +11,11 @@
     <h2>Ключевые услуги</h2>
     {% for service in services %}
     <div class="card col-4 text-white bg-primary mb-3 mt-3">
+      {% if service.image %}
+        <a href="{{ service.image.url }}" target="_blank">
+          <img class="border-3 rounded img-fluid img-thumbnail mb-2 mx-auto d-block" src="{{ service.image.url }}">
+        </a>
+      {% endif %}
       <div class="card-body">
         <h3>{{ service.name }}</h3>
         <p>{{ service.cost }} ₽</p>
@@ -24,6 +29,11 @@
     <h2>Последние новости</h2>
     {% for news in news_list %}
     <div class="card col-4 text-white bg-secondary mb-3 mt-3">
+      {% if news.image %}
+        <a href="{{ news.image.url }}" target="_blank">
+          <img class="border-3 rounded img-fluid img-thumbnail mb-2 mx-auto d-block" src="{{ news.image.url }}">
+        </a>
+      {% endif %}
       <div class="card-body">
         <h3>{{ news.title }}</h3>
         <a class="link-body-emphasis" href="{% url 'news:news_detail' news.id %}">Подробнее...</a>
