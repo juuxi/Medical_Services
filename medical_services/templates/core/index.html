@@ -4,10 +4,10 @@
 {% endblock %}
 {% block content %}
   <h1>Главная страница</h1>
-  <p>Ваше здоровье — в надежных руках.</p>
-  <p>MediCore — где забота и профессионализм становятся ядром вашего здоровья.</p>
+  <h3>Ваше здоровье — в надежных руках.</h3>
+  <h3>MediCore — где забота и профессионализм становятся ядром вашего здоровья.</h3>
 
-  <section>
+  <section class="my-5">
     <h2>Ключевые услуги</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
       {% for service in services %}
@@ -30,7 +30,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="my-5">
     <h2>Последние новости</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
       {% for news in news_list %}
@@ -51,15 +51,15 @@
     </div>
   </section>
 
-  <section>
+  <section class="my-5">
     <h2>Почему мы?</h2>
-    <ul>
-      <li>Профессионализм и опты</li>
-      <li>Индивидуальный подход</li>
-      <li>Современное оборудование</li>
-      <li>Прозрачность и честность</li>
+    <ul class="text-success">
+      <li><h5>Профессионализм и опыт</h5></li>
+      <li><h5>Индивидуальный подход</h5></li>
+      <li><h5>Современное оборудование</h5></li>
+      <li><h5>Прозрачность и честность</h5></li>
     </ul>
   </section>
 
-  <a href="{% url 'core:about' %}">Связаться с нами</a>
+  <a href="{% url 'core:about' %}" class="link-opacity-50-hover link-secondary"><h5>Связаться с нами</h5></a>
 {% endblock %}
