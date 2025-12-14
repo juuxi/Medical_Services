@@ -26,6 +26,7 @@
     <div class="card col-4 text-white bg-secondary mb-3 mt-3">
       <div class="card-body">
         <h3>{{ news.title }}</h3>
+        <a class="link-body-emphasis" href="{% url 'news:news_detail' news.id %}">Подробнее...</a>
       </div>
     </div>
     {% endfor %}
