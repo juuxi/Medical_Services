@@ -24,8 +24,12 @@
   <section>
     <h2>Последние новости</h2>
     {% for news in news_list %}
-      {{ news.title }}
-      {% if not forloop.last %}<br> {% endif %}
+    <div class="card col-4 text-white bg-secondary mb-3 mt-3">
+      <div class="card-body">
+        <h3>{{ news.title }}</h3>
+        {% if not forloop.last %}<br> {% endif %}
+      </div>
+    </div>
     {% endfor %}
   </section>
 
