@@ -1,0 +1,23 @@
+{% load static %}
+<footer class="bg-dark text-white text-center py-3 fixed-bottom">
+  <p>© Название компании, 2025</p>
+
+  <div class="d-flex flex-wrap justify-content-evenly">
+    <a class="nav-link" href="{% url 'core:homepage' %}">
+      Главная
+    </a>
+    <a class="nav-link" href="{% url 'services:services_list' %}">
+      Список Услуг
+    </a>
+    <a class="nav-link" href="{% url 'news:news_list' %}">
+      Новости
+    </a>
+    <a class="nav-link" href="{% url 'core:about' %}">
+      О нас
+    </a>
+  </div>
+
+  <p>Адрес: Адрес</p>
+  <p>+7 (900) 000-00-00</p>
+  <p>dummy@gmail.com</p>
+</footer>
