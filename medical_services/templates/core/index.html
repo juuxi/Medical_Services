@@ -10,14 +10,22 @@
   <section>
     <h2>Ключевые услуги</h2>
     {% for service in services %}
-      {{ service.name }} <br>
+    <div class="card col-4 text-white bg-primary mb-3 mt-3">
+      <div class="card-body">
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.cost }} ₽</p>
+        <a class="link-body-emphasis" href="{% url 'services:service_detail' service.id %}">Подробнее...</a>
+        {% if not forloop.last %}<br> {% endif %}
+      </div>
+    </div>
     {% endfor %}
   </section>
 
   <section>
     <h2>Последние новости</h2>
     {% for news in news_list %}
-      {{ news.title }} <br>
+      {{ news.title }}
+      {% if not forloop.last %}<br> {% endif %}
     {% endfor %}
   </section>
 
