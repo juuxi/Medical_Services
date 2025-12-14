@@ -24,5 +24,5 @@ urlpatterns = [
     path('services/', include('services.urls', namespace='services')),
     path('news/', include('news.urls', namespace='news')),
     path('', include('core.urls', namespace='core')),
-    path('about/', include('core.urls', namespace='core')),
+    path('contacts/', include('core.urls', namespace='core')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
