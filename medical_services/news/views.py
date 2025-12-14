@@ -7,7 +7,8 @@ from .models import News
 
 class NewsListView(ListView):
     model = News
-    ordering = 'created_at'
+    ordering = '-created_at'
+    paginate_by = 5
 
 
 class NewsDetailView(DetailView):

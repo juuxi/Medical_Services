@@ -7,6 +7,7 @@ from .models import Service
 class ServicesListView(ListView):
     model = Service
     ordering = 'id'
+    paginate_by = 5
 
 
 class ServiceDetailView(DetailView):
