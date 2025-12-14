@@ -4,50 +4,60 @@
 {% endblock %}
 {% block content %}
   <h1>Главная страница</h1>
-  <p>Приветствие</p>
-  <p>Слоган</p>
+  <p>Ваше здоровье — в надежных руках.</p>
+  <p>MediCore — где забота и профессионализм становятся ядром вашего здоровья.</p>
 
   <section>
     <h2>Ключевые услуги</h2>
-    {% for service in services %}
-    <div class="card col-4 text-white bg-primary mb-3 mt-3">
-      {% if service.image %}
-        <a href="{{ service.image.url }}" target="_blank">
-          <img class="border-3 rounded img-fluid img-thumbnail mb-2 mx-auto d-block" src="{{ service.image.url }}">
-        </a>
-      {% endif %}
-      <div class="card-body">
-        <h3>{{ service.name }}</h3>
-        <h3>{{ service.short_description }}</h3>
-        <p>{{ service.cost }} ₽</p>
-        <a class="link-body-emphasis" href="{% url 'services:service_detail' service.id %}">Подробнее...</a>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      {% for service in services %}
+      <div class="col">
+        <div class="card text-white bg-primary mb-3 mt-3">
+          {% if service.image %}
+            <a href="{{ service.image.url }}" target="_blank">
+              <img class="border-3 rounded img-fluid img-thumbnail mb-2 mx-auto d-block" src="{{ service.image.url }}">
+            </a>
+          {% endif %}
+          <div class="card-body">
+            <h3>{{ service.name }}</h3>
+            <h3>{{ service.short_description }}</h3>
+            <p>{{ service.cost }} ₽</p>
+            <a class="link-body-emphasis" href="{% url 'services:service_detail' service.id %}">Подробнее...</a>
+          </div>
+        </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </section>
 
   <section>
     <h2>Последние новости</h2>
-    {% for news in news_list %}
-    <div class="card col-4 text-white bg-secondary mb-3 mt-3">
-      {% if news.image %}
-        <a href="{{ news.image.url }}" target="_blank">
-          <img class="border-3 rounded img-fluid img-thumbnail mb-2 mx-auto d-block" src="{{ news.image.url }}">
-        </a>
-      {% endif %}
-      <div class="card-body">
-        <h3>{{ news.title }}</h3>
-        <a class="link-body-emphasis" href="{% url 'news:news_detail' news.id %}">Подробнее...</a>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      {% for news in news_list %}
+      <div class="col">
+        <div class="card text-white bg-secondary mb-3 mt-3">
+          {% if news.image %}
+            <a href="{{ news.image.url }}" target="_blank">
+              <img class="border-3 rounded img-fluid img-thumbnail mb-2 mx-auto d-block" height="50" src="{{ news.image.url }}">
+            </a>
+          {% endif %}
+          <div class="card-body">
+            <h3>{{ news.title }}</h3>
+            <a class="link-body-emphasis" href="{% url 'news:news_detail' news.id %}">Подробнее...</a>
+          </div>
+        </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </section>
 
   <section>
     <h2>Почему мы?</h2>
     <ul>
-      <li>Тезис 1</li>
-      <li>Тезис 2</li>
+      <li>Профессионализм и опты</li>
+      <li>Индивидуальный подход</li>
+      <li>Современное оборудование</li>
+      <li>Прозрачность и честность</li>
     </ul>
   </section>
 
