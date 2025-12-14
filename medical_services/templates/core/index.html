@@ -4,4 +4,30 @@
 {% endblock %}
 {% block content %}
   <h1>Главная страница</h1>
+  <p>Приветствие</p>
+  <p>Слоган</p>
+
+  <section>
+    <h2>Ключевые услуги</h2>
+    {% for service in services %}
+      {{ service.name }} <br>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Последние новости</h2>
+    {% for news in news_list %}
+      {{ news.title }} <br>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Почему мы?</h2>
+    <ul>
+      <li>Тезис 1</li>
+      <li>Тезис 2</li>
+    </ul>
+  </section>
+
+  <a href="{% url 'core:about' %}">Связаться с нами</a>
 {% endblock %}
