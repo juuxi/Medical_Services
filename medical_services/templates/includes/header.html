@@ -3,7 +3,8 @@
   <nav class="navbar navbar-light" style="background-color: lightskyblue">
     <div class="container">
       <a class="navbar-brand" href="{% url 'core:homepage' %}">
-        МедУслуги
+        <img src="{% static 'core/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+        MediCore
       </a>
       {% with request.resolver_match.view_name as view_name %}
         <ul class="nav  nav-pills">
