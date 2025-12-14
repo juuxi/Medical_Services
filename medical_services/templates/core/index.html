@@ -18,6 +18,7 @@
       {% endif %}
       <div class="card-body">
         <h3>{{ service.name }}</h3>
+        <h3>{{ service.short_description }}</h3>
         <p>{{ service.cost }} ₽</p>
         <a class="link-body-emphasis" href="{% url 'services:service_detail' service.id %}">Подробнее...</a>
       </div>

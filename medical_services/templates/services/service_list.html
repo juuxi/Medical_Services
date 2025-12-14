@@ -4,17 +4,17 @@
 {% endblock %}
 {% block content %}
   {% for service in object_list %}
-    {% if service.is_provided %}
+    <div class="card col-4 text-white bg-primary mb-3 mt-3">
       {% if service.image %}
         <a href="{{ service.image.url }}" target="_blank">
           <img class="border-3 rounded img-fluid img-thumbnail mb-2 mx-auto d-block" src="{{ service.image.url }}">
         </a>
       {% endif %}
-      Название: {{ service.name }} <br> Стоимость: {{ service.cost }} ₽ <br> Длительность: {{ service.duration_minutes }} минут <br>
-      <a href="{% url 'services:service_detail' service.id%}">Подробнее</a>
-      {% if not forloop.last %}
-        <hr>
-      {% endif %}
-    {% endif %}
+      <div class="card-body">
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.cost }} ₽</p>
+        <a class="link-body-emphasis" href="{% url 'services:service_detail' service.id %}">Подробнее...</a>
+      </div>
+    </div>
   {% endfor %}
 {% endblock %}
